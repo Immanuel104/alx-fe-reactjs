@@ -9,7 +9,7 @@ function App() {
         <div>
            <Header />           {/* Including Header component */}
             <MainContent />      {/* Including MainContent component */}
-               <UserProfile name="Immanuel" age="20" bio="Loves hiking and photography." />  {/* Using UserProfile component */}
+               <UserProfile name="Alice" age="25" bio="Loves hiking and photography." />  {/* Using UserProfile component */}
             <Footer />           {/* Including Footer component */}
             <WelcomeMessage />
         </div>
