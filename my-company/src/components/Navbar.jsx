@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-  return (
+  return ("display", "justifyContent"
     <nav style={{ padding: '10px', backgroundColor: '#f0f0f0' }}>
       <Link to="/" style={{ margin: '0 10px' }}>Home</Link>
       <Link to="/about" style={{ margin: '0 10px' }}>About</Link>
