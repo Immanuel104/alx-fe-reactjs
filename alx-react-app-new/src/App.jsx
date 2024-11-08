@@ -1,3 +1,4 @@
+import Counter from './components/Counter';  // Importing Counter component
 import UserProfile from './components/UserProfile';  // Importing UserProfile componentimport React from 'react';
 import Header from './components/Header';  // Importing Header component
 import MainContent from './components/MainContent';  // Importing MainContent component
