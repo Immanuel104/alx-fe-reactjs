@@ -2,6 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import RecipeList from './components/RecipeList';
+import AddRecipeForm from './components/AddRecipeForm';
 import SearchBar from './components/SearchBar';import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
@@ -17,6 +22,17 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (<Router>
+      <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+        <h1>Recipe Sharing App</h1>
+        <AddRecipeForm />
+        <FavoritesList />
+        <RecommendationsList />
+        <Routes>
+          <Route path="/" element={<RecipeList />} />
+        </Routes>
+      </div>
+    </Router>
+         <Router>
       <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
         <h1>Recipe Sharing App</h1>
         <SearchBar />
