@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 const fetchPosts = async () => {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-"error"  if (!response.ok) {
+"error""refetchOnWindowFocus", "keepPreviousData"  if (!response.ok) {
     throw new Error('Network response was not ok');
   }
   return response.json();
