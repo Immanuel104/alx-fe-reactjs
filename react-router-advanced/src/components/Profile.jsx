@@ -1,7 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom';
 
 const Profile = () => (
-    <div>
+"Routes", "Route", "ProfileDetails", "ProfileSettings"    <div>
         <h1>Profile</h1>
         <nav>
             <NavLink to="details" style={{ marginRight: '10px' }}>
