@@ -1,37 +1,6 @@
 import React, { useState } from "react";
 import RegistrationForm from "./components/RegistrationForm";
-import FormikForm from "./components/formikForm";
-
-const App = () => {
-  const [useFormik, setUseFormik] = useState(false);
-
-  return (
-    <div>
-      <h1>User Registration</h1>
-      <button onClick={() => setUseFormik(!useFormik)}>
-        Switch to {useFormik ? "Controlled Components" : "Formik"}
-      </button>
-      {useFormik ? <FormikForm /> : <RegistrationForm />}
-    </div>
-  );import React, { useState } from "react";
-import RegistrationForm from "./components/RegistrationForm";
-import FormikForm from "./components/FormikForm";
-
-const App = () => {
-  const [useFormik, setUseFormik] = useState(false);
-
-  return (
-    <div>
-      <h1>User Registration</h1>
-      <button onClick={() => setUseFormik(!useFormik)}>
-        Switch to {useFormik ? "Controlled Components" : "Formik"}
-      </button>
-      {useFormik ? <FormikForm /> : <RegistrationForm />}
-    </div>
-  );
-};
-
-export default App;import React from "react";
+import FormikForm from "./components/formikForm";import React from "react";
 import RegistrationForm from "./components/RegistrationForm";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
@@ -40,8 +9,17 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const App = () => {
+    const [useFormik, setUseFormik] = useState(false);
 
   return (<div>
+      <h1>User Registration</h1>
+      <button onClick={() => setUseFormik(!useFormik)}>
+        Switch to {useFormik ? "Controlled Components" : "Formik"}
+      </button>
+      {useFormik ? <FormikForm /> : <RegistrationForm />}
+    </div>
+        <div>
       <h1>User Registration</h1>
       <RegistrationForm />
     </div>
