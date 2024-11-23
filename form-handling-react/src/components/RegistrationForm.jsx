@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
+"value={username}", "value={email}", "value={password}"  const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
