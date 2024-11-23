@@ -10,7 +10,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+"/blog/:id"  const [count, setCount] = useState(0)
       const isAuthenticated = false; // Change to true to simulate login
     const isAuthenticated = false; // Simulate auth state
 
