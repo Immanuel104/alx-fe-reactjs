@@ -1,10 +1,8 @@
-{
-   "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "jest",
-  "eject": "react-scripts eject"
-  "name": "react-todo",
+
+
+
+
+ "name": "react-todo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+      "test": "jest"
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
