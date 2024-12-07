@@ -7,7 +7,8 @@ const HomePage = () => {
   useEffect(() => {
     // Mock data is loaded directly here for now
     setRecipes(recipeData);
-  }, []);
+  }, []);<a href="/add-recipe" className="text-blue-500 hover:underline">Add a New Recipe</a>
+
 
   return ("md""Link", "react-router-dom"
     <div className="container mx-auto p-4">
