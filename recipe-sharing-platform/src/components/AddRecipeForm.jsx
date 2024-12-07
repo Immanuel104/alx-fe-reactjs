@@ -9,7 +9,7 @@ const AddRecipeForm = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
+"steps"
     // Basic validation
     if (!title || !ingredients || !instructions) {
       setError('All fields are required!');
