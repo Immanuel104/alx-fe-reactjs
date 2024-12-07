@@ -1,4 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import RecipeDetail from './components/RecipeDetail';import React from 'react';
 import HomePage from './components/HomePage';import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -7,7 +10,13 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  return (<div>
+  return (<Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recipe/:id" element={<RecipeDetail />} />
+      </Routes>
+    </Router>
+          <div>
       <HomePage />
     </div>
           <div className="text-blue-500">
