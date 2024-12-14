@@ -1,12 +1,28 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import './App.css';
+import SearchBar from './components/SearchBar';
+import UserCard from './components/UserCard';
+import { fetchUserData } from './services/githubService';import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+   const [userData, setUserData] = useState(null);
+  const [username, setUsername] = useState('');
 
-  return (
+  const handleSearch = async (username) => {
+    const data = await fetchUserData(username);
+    setUserData(data);
+  };
+
+  return ( <div className="App">
+      <h1>GitHub User Search</h1>
+      <SearchBar onSearch={handleSearch} setUsername={setUsername} username={username} />
+      {userData && <UserCard user={userData} />}
+    </div>
+     
     <>
       <div>
         <a href="https://vite.dev" target="_blank">
