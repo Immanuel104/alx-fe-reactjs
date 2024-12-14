@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function SearchBar({ onSearch, setUsername, username }) {
+function SearchBar({ onSearch }) {
+  const [username, setUsername] = useState('');
+
+  const handleInputChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault(); // Prevent form submission from refreshing the page
+    onSearch(username); // Trigger search with the username
+  };
+
   return (
-    <div>
+    <form onSubmit={handleSearch}>
       <input
         type="text"
         placeholder="Enter GitHub username"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={handleInputChange}
       />
-      <button onClick={() => onSearch(username)}>Search</button>
-    </div>
+      <button type="submit">Search</button>
+    </form>
   );
 }
 
