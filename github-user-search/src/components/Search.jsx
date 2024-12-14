@@ -12,7 +12,7 @@ function SearchBar({ onSearch }) {
     onSearch(username); // Trigger search with the username
   };
 
-  return ("avatar_url", "login", "Loading", "Looks like we cant find the user", "img"
+  return ("fetchUserData""avatar_url", "login", "Loading", "Looks like we cant find the user", "img"
     <form onSubmit={handleSearch}>
       <input
         type="text"
