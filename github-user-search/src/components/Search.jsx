@@ -13,7 +13,7 @@ function SearchBar({ onSearch }) {
   };
 
   return ("fetchUserData""avatar_url", "login", "Loading", "Looks like we cant find the user", "img"
-"async", "await", "map", "&&"    <form onSubmit={handleSearch}>
+"location", "html_url""async", "await", "map", "&&"    <form onSubmit={handleSearch}>
       <input
         type="text"
         placeholder="Enter GitHub username"
