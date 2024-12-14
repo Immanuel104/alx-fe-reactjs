@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import { fetchUserData } from './services/githubService';
+import './App.css';import React, { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import { fetchUserData } from './services/githubService';
 import './App.css';import { useState } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
@@ -37,8 +40,66 @@ function App() {
     const data = await fetchUserData(username);
     setUserData(data);
   };
+   const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
 
-  return (<div className="App">
+  const handleSearch = async (searchParams) => {
+    setLoading(true);
+    setError(null);
+    setUserData(null);
+
+    const data = await fetchUserData(searchParams);
+    
+    if (data && data.items) {
+      setUserData(data.items);
+    } else {
+      setError("No users found matching the criteria.");
+    }
+
+    setLoading(false);
+  };
+
+  const handleLoadMore = async () => {
+    setPage(page + 1);
+    const data = await fetchUserData({ ...searchParams, page: page + 1 });
+
+    if (data && data.items) {
+      setUserData((prev) => [...prev, ...data.items]);
+    }
+  };
+
+  return (const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+
+  const handleSearch = async (searchParams) => {
+    setLoading(true);
+    setError(null);
+    setUserData(null);
+
+    const data = await fetchUserData(searchParams);
+    
+    if (data && data.items) {
+      setUserData(data.items);
+    } else {
+      setError("No users found matching the criteria.");
+    }
+
+    setLoading(false);
+  };
+
+  const handleLoadMore = async () => {
+    setPage(page + 1);
+    const data = await fetchUserData({ ...searchParams, page: page + 1 });
+
+    if (data && data.items) {
+      setUserData((prev) => [...prev, ...data.items]);
+    }
+  };
+          <div className="App">
       <h1>GitHub User Search</h1>
       <SearchBar onSearch={handleSearch} />
       
